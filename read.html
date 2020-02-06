@@ -1,55 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project</title>
-    <style>
-        div.gallery {
-            margin: 5px;
-            border: 1px solid #ccc;
-            float: left;
-            width: 180px;
-        }
-
-        div.gallery:hover {
-            border: 1px solid #777;
-        }
-
-        div.gallery img {
-            width: 100%;
-            height: auto;
-        }
-
-        div.desc {
-            padding: 15px;
-            text-align: center;
-        }
-    </style>
 </head>
-
 <body>
-    <div class="gallery">
 
-    </div>
+<div class="gallery">
+  <a target="_blank" href="">
+    <img src="./imageReviews/1.png" alt="Cinque Terre" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
 
-    <script type="text/javascript">
-        const countImageReview = 10;
-        var review= '';
-        for(let i=0; i<countImageReview; i++) {
-            review+=`<a target="_blank" href="#">
-            <img src="./imageReviews/${i}.png" alt="screen" width="600" height="400">
-        </a>
-        <div class="desc">Screen</div>`;
-        }
+<div class="gallery">
+  <a target="_blank" href="">
+    <img src="./imageReviews/2.png" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
 
-        window.onload=() =>{
-            let dom = document.getElementsByClassName('gallery');
-            dom.innerHTML += review;
-        }
-    </script>
+<div class="gallery">
+  <a target="_blank" href="">
+    <img src="./imageReviews/3.png" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="">
+    <img src="./imageReviews/4.png" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery">
+    <a target="_blank" href="">
+      <img src="./imageReviews/5.png" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="./imageReviews/6.png" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="./imageReviews/7.png" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="./imageReviews/8.png" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="./imageReviews/9.png" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="./imageReviews/10.png" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="./imageReviews/11.png" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="./imageReviews/12.png" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="./imageReviews/13.png" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
 </body>
-
 </html>
