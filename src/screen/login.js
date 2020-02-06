@@ -20,7 +20,7 @@ export default class Login extends Component {
           <Header bgHeader={bgHeader} title={StylesApp.logoText} quote={StylesApp.quote} />
         </View>
         <View style={styles.styleBody}>
-          < LoginComponent />
+          < LoginComponent navigation={this.props.navigation} />
         </View>
       </ImageBackground>
     )

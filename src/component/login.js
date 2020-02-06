@@ -16,6 +16,7 @@ export default class login extends Component {
 
     redirectScreen = (screenName) => {
         console.log(this.props.navigation);
+        this.props.navigation.navigate(screenName);
     }
 
     render() {
@@ -45,8 +46,8 @@ export default class login extends Component {
                         <ButtonTextAN title={'Sign in'} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
                     </View>
                     <View style={styles.SignupAndFgPass}>
-                        <ButtonTextAN onPress={this.redirectScreen} title={'Signup'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
-                        <ButtonTextAN onPress={this.redirectScreen} title={'Forgot password'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
+                        <ButtonTextAN onPress={()=>{this.redirectScreen('Register')}} title={'Signup'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
+                        <ButtonTextAN onPress={()=>{this.redirectScreen('VerifyPhone')}} title={'Forgot password'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                     </View>
                 </View>
             </View>
