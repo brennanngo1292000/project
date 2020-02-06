@@ -5,34 +5,34 @@
 //Events = [onCheck]
 //----------------------------------------------Note---------------------------------------------------------------------
 
-import React, {Component } from 'react'
-import {TouchableOpacity } from 'react-native';
+import React, { Component } from 'react'
+import { TouchableOpacity } from 'react-native';
 import Icon from "react-native-vector-icons/Fontisto";
 
 export default class CheckBoxAN extends Component {
     constructor(props) {
         super(props)
-        this.state= {
-            isCheck:false,
+        this.state = {
+            isCheck: false,
         }
 
-        this.isCheck= this.isCheck.bind(this);
+        this.isCheck = this.isCheck.bind(this);
     }
 
-    isCheck= ()=> {
+    isCheck = () => {
         this.setState({
-            isCheck:!this.state.isCheck,
+            isCheck: !this.state.isCheck,
         })
-        if(this.props.onCheck) this.props.onCheck(this.state.isCheck);
+        if (this.props.onCheck) this.props.onCheck(this.state.isCheck);
     }
 
     render() {
         return (
-        <TouchableOpacity onPress={this.isCheck}>
-            {this.state.isCheck?
-            <Icon name="checkbox-active" color={this.props.color? this.props.color: 'black'} size={this.props.fontSize? this.props.fontSize: 14}/>:
-            <Icon name="checkbox-passive" color={this.props.color? this.props.color: 'black'} size={this.props.fontSize? this.props.fontSize: 14}/>}
-        </TouchableOpacity>
+            <TouchableOpacity onPress={this.isCheck}>
+                {this.state.isCheck ?
+                    <Icon name="checkbox-active" color={this.props.color ? this.props.color : 'black'} size={this.props.fontSize ? this.props.fontSize : 14} /> :
+                    <Icon name="checkbox-passive" color={this.props.color ? this.props.color : 'black'} size={this.props.fontSize ? this.props.fontSize : 14} />}
+            </TouchableOpacity>
         )
     }
 }
