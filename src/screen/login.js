@@ -7,12 +7,14 @@ import bgApp from "./images/bgApp.png";
 import StylesApp from "../component/StylesApp";
 
 export default class Login extends Component {
+
   constructor(props) {
     super(props)
     this.state = {
 
     }
   }
+
   render() {
     return (
       <ImageBackground source={bgApp} style={styles.ImageBgApp}>

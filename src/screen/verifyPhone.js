@@ -10,8 +10,10 @@ export default class HomeScreen extends Component {
   constructor(props) {
     super(props)
     this.state = {
+
     }
   }
+
   render() {
     return (
       <ImageBackground source={bgApp} style={styles.ImageBgApp}>
@@ -19,7 +21,7 @@ export default class HomeScreen extends Component {
           <Header bgHeader={bgHeader} title={StylesApp.logoText} quote={StylesApp.quote} />
         </View>
         <View style={styles.styleBody}>
-          <VerifyPhoneComponent />
+          <VerifyPhoneComponent navigation={this.props.navigation} />
         </View>
       </ImageBackground>
     )

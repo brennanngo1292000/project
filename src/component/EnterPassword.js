@@ -15,6 +15,8 @@ export default class EnterPassword extends Component {
         this.textChange = this.textChange.bind(this);
         this.createPassword = this.createPassword.bind(this);
     }
+
+    //-------------------------------------------Check password------------------------------------------------------
     checkPassword = (input) => {
         if (!input) {
             this.setState({
@@ -66,17 +68,22 @@ export default class EnterPassword extends Component {
         return true;
     }
 
+    //--------------------------Save value from password input which has been filled by user-------------------------
     textChange = (text) => {
         this.setState({
             password: text,
         })
     }
 
+    //--------------------------Submit form, if password is true, redirect to other screen---------------------------
     createPassword = () => {
         let result = this.checkPassword(this.state.password);
         if (result) {
             //Post data to table||database
-            alert(this.state.password);
+            //Code
+
+            //Redirect to login screen
+            this.props.navigation.navigate('Login');
         }
     }
 
@@ -91,13 +98,15 @@ export default class EnterPassword extends Component {
             <View style={styles.loginView}>
                 <View style={{ flexDirection: "column", justifyContent: "center" }}>
                     <View style={styles.inputPassword}>
-                        <InputAN onChangeInput={this.textChange} placeholder='Password' hasIcon={true} fontSize={StylesApp.fontSize} bgColor={'white'} />
+                        <InputAN onChangeInput={this.textChange} placeholder='Enter password' hasIcon={true} fontSize={StylesApp.fontSize} bgColor={'white'} />
                     </View>
+
                     {/* Show error */}
                     {this.state.isError ? errorComponent : null}
                     {/* Show error */}
+
                     <View style={styles.buttonForm}>
-                        <ButtonTextAN title={'Next'} onPress={this.createPassword} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
+                        <ButtonTextAN title={'Login'} onPress={this.createPassword} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
                     </View>
                 </View>
             </View>

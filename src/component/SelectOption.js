@@ -15,8 +15,6 @@ export default class ModalPicker extends Component {
         });
     }
 
-
-
     changeModalVisibility = (bool) => {
         this.setState({ isModalVisible: bool })
     }

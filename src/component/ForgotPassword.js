@@ -13,7 +13,6 @@ export default class Register extends Component {
             phone: null,
             isError: false,
             error: null,
-            isCheck: false,
         }
         this.changeCountry = this.changeCountry.bind(this);
         this.changePhone = this.changePhone.bind(this);
@@ -47,13 +46,6 @@ export default class Register extends Component {
         return true;
     }
 
-    //----------------------------------------Check, user had been checked box---------------------------------------
-    isAccepted = (value) => {
-        this.setState({
-            isCheck: value,
-        })
-    }
-
     //-------------------------------------Save value from code country input---------------------------------------
     changeCountry = (text) => {
         this.setState({
@@ -75,7 +67,7 @@ export default class Register extends Component {
 
     //---------------------------------Get phone is filled in input and check---------------------------------------
     postPhone() {
-        if (this.checkPhone(this.state.phone) && this.state.isCheck) {
+        if (this.checkPhone(this.state.phone)) {
             // post data on server
             //code
 
@@ -120,16 +112,9 @@ export default class Register extends Component {
                     <View style={styles.buttonForm}>
                         <ButtonTextAN onPress={this.postPhone} title={'Next'} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
                     </View>
-                    <View style={{ marginTop: 10, flexDirection: 'row', justifyContent: 'center', alignItem: 'center' }}>
-                        <CheckBoxAN onCheck={this.isAccepted} fontSize={StylesApp.fontSize} color={StylesApp.button} />
-                        <Text style={{ color: StylesApp.text, fontSize: StylesApp.fontSize }}> Toi chap nhan </Text>
-                        <TouchableOpacity>
-                            <Text style={{ color: StylesApp.button, textDecorationLine: 'underline', fontSize: StylesApp.fontSize }}>Chinh sach, dieu khoan</Text>
-                        </TouchableOpacity>
-                    </View>
                     <View style={styles.SignupAndFgPass}>
+                        <ButtonTextAN onPress={() => this.redirectScreen('Signup')} title={'Sign up'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                         <ButtonTextAN onPress={() => this.redirectScreen('Login')} title={'Login'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
-                        <ButtonTextAN onPress={() => this.redirectScreen('VerifyPhone')} title={'Forgot password'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                     </View>
                 </View>
             </View>

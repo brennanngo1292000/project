@@ -1,5 +1,13 @@
+//is writed by Anh Ngo on 02/06/2020. Thanks for read and use
+
+//----------------------------------------------Note---------------------------------------------------------------------
+//props = [bgColor, width, height,fontSize, color]
+//Events = [onPress, onPressOut, onPressIn]
+//----------------------------------------------Note---------------------------------------------------------------------
+
+
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native'
+import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 
 export default class ButtonTextAN extends Component {
     constructor(props) {

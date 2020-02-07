@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, ImageBackground } from 'react-native';
 import Header from "../component/SliderAN";
-import LoginComponent from "../component/EnterPassword";
+import EnterPasswordComponent from "../component/EnterPassword";
 import bgHeader from "./images/bgHeader.jpg";
 import bgApp from "./images/bgApp.png";
 import StylesApp from "../component/StylesApp";
@@ -20,7 +20,7 @@ export default class Login extends Component {
           <Header bgHeader={bgHeader} title={StylesApp.logoText} quote={StylesApp.quote} />
         </View>
         <View style={styles.styleBody}>
-          < LoginComponent />
+          < EnterPasswordComponent navigation={this.props.navigation} />
         </View>
       </ImageBackground>
     )

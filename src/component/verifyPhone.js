@@ -17,12 +17,13 @@ export default class ConfirmPhone extends Component {
         }
         this.changeCode = this.changeCode.bind(this);
         this.confirmCode = this.confirmCode.bind(this);
+        this.redirectScreen = this.redirectScreen.bind(this);
     }
 
-    //-----------------------------------Save code on state--------------------------------------
+    //-------------------------------------------Save code on state------------------------------------------------
     changeCode = (value) => {
         this.setState({
-            code: value
+            code: value,
         })
     }
     //----------------------------------method check code from input in state--------------------------------------
@@ -56,12 +57,25 @@ export default class ConfirmPhone extends Component {
     //------------------------------------------------submit to checkcode--------------------------------------------
     confirmCode = () => {
         if (this.checkCode(this.state.code)) {
-
+            //redirect to EnterPassword Screen
+            this.redirectScreen('EnterPassword');
         }
     }
 
+    //----------------------------------Redirect this screen to other screen-------------------------------------------
+    redirectScreen = (screenName) => {
+        this.props.navigation.navigate(screenName);
+    }
+
+    //--------------------------------Send code again if user pressed again button------------------------------------
     sendCodeAgain = () => {
-        //Send code to phone which is signed
+        //call sever to send code 
+        //code
+
+        if (this.state.timeRun) {
+            return;
+        }
+
         this.state.timeRun = setInterval(() => {
             this.setState({
                 isSendCodeAgain: true,
@@ -69,14 +83,22 @@ export default class ConfirmPhone extends Component {
             })
         }, 1000);
     }
-    componentWillUpdate() {
-        if (this.state.time == 0) {
+
+    //----------------------------------------determine the time to stop timeRun------------------------------------
+    componentDidUpdate() {
+        if (this.state.time == 1) {
             clearInterval(this.state.timeRun);
             this.setState({
                 isSendCodeAgain: false,
                 time: 30,
+                timeRun: null,
             })
         }
+    }
+
+    //-----If user pressed again button to send code while redirect to other screen. This time, must stop timeRun------
+    componentWillUnmount() {
+        clearInterval(this.state.timeRun);
     }
 
     render() {
@@ -97,21 +119,24 @@ export default class ConfirmPhone extends Component {
                         <InputAN placeholder={'Code'} fontSize={StylesApp.fontSize} bgColor={'white'} onChangeInput={this.changeCode} width={300} />
                         <ButtonTextAN title={'again'} onPress={this.sendCodeAgain} />
                     </View>
+
                     {/* Show error */}
                     {this.state.isError ? errorComponent : null}
                     {/* Show error */}
+
                     <View style={styles.buttonForm}>
-                        <ButtonTextAN title={'Sign in'} onPress={this.confirmCode} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
+                        <ButtonTextAN title={'Next'} onPress={this.confirmCode} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
                     </View>
                     <View style={styles.SignupAndFgPass}>
-                        <ButtonTextAN onPress={this.redirectScreen} title={'Signup'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
-                        <ButtonTextAN onPress={this.redirectScreen} title={'Forgot password'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
+                        <ButtonTextAN onPress={() => this.redirectScreen('Register')} title={'Signup'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
+                        <ButtonTextAN onPress={() => this.redirectScreen('Login')} title={'Login'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                     </View>
                 </View>
             </View>
         )
     }
 }
+
 const styles = StyleSheet.create({
     ConfirmPhoneView: {
         justifyContent: "flex-start",

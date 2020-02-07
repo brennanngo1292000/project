@@ -13,6 +13,7 @@ export default class Header extends Component {
         this.state = {
         }
     }
+
     render() {
         return (
             <ImageBackground source={this.props.bgHeader} style={styles.bgHeader}>

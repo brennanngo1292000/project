@@ -14,8 +14,8 @@ export default class login extends Component {
         this.redirectScreen = this.redirectScreen.bind(this);
     }
 
+    //------------------------------------Redirect this screen to other screen--------------------------------------- 
     redirectScreen = (screenName) => {
-        console.log(this.props.navigation);
         this.props.navigation.navigate(screenName);
     }
 
@@ -46,14 +46,15 @@ export default class login extends Component {
                         <ButtonTextAN title={'Sign in'} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
                     </View>
                     <View style={styles.SignupAndFgPass}>
-                        <ButtonTextAN onPress={()=>{this.redirectScreen('Register')}} title={'Signup'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
-                        <ButtonTextAN onPress={()=>{this.redirectScreen('VerifyPhone')}} title={'Forgot password'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
+                        <ButtonTextAN onPress={() => this.redirectScreen('Register')} title={'Signup'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
+                        <ButtonTextAN onPress={() => this.redirectScreen('ForgotPassword')} title={'Forgot password'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                     </View>
                 </View>
             </View>
         )
     }
 }
+
 const styles = StyleSheet.create({
     loginView: {
         justifyContent: "flex-start",

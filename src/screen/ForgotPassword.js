@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, ImageBackground } from 'react-native';
 import Header from "../component/SliderAN";
-import RegisterComponent from '../component/register';
 import bgApp from "./images/bgApp.png";
 import bgHeader from "./images/bgHeader.jpg";
-import StylesApp from '../component/StylesApp';
+import StylesApp from "../component/StylesApp";
+import ForgotPasswordComponent from '../component/ForgotPassword';
 
-export default class Register extends Component {
+export default class ForgotPassword extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -20,7 +20,7 @@ export default class Register extends Component {
           <Header bgHeader={bgHeader} title={StylesApp.logoText} quote={StylesApp.quote} />
         </View>
         <View style={styles.styleBody}>
-          <RegisterComponent navigation={this.props.navigation} />
+          <ForgotPasswordComponent navigation={this.props.navigation} />
         </View>
       </ImageBackground>
     )
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   styleBody: {
     height: '60%',
-    width: '100%'
+    width: '90%'
   }
 })
 

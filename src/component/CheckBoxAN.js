@@ -19,8 +19,8 @@ export default class CheckBoxAN extends Component {
         this.isCheck = this.isCheck.bind(this);
     }
 
-    isCheck = () => {
-        this.setState({
+    isCheck = async () => {
+        await this.setState({
             isCheck: !this.state.isCheck,
         })
         if (this.props.onCheck) this.props.onCheck(this.state.isCheck);
@@ -28,7 +28,7 @@ export default class CheckBoxAN extends Component {
 
     render() {
         return (
-            <TouchableOpacity onPress={this.isCheck}>
+            <TouchableOpacity onPress={this.isCheck} style={{ justifyContent: 'center', alignItems: 'center' }}>
                 {this.state.isCheck ?
                     <Icon name="checkbox-active" color={this.props.color ? this.props.color : 'black'} size={this.props.fontSize ? this.props.fontSize : 14} /> :
                     <Icon name="checkbox-passive" color={this.props.color ? this.props.color : 'black'} size={this.props.fontSize ? this.props.fontSize : 14} />}
