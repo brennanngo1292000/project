@@ -8,7 +8,12 @@ export default class ForgotPassword extends Component {
     this.state = {
 
     }
+
+    this.props.navigation.setOptions({
+      title: 'Forgot password',
+    });
   }
+
   render() {
     return (
       <>

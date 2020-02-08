@@ -8,6 +8,10 @@ export default class EnterPassword extends Component {
     this.state = {
 
     }
+
+    this.props.navigation.setOptions({
+      title: 'Enter password',
+    });
   }
 
   render() {

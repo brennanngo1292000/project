@@ -8,6 +8,10 @@ export default class Login extends Component {
     this.state = {
 
     }
+    
+    this.props.navigation.setOptions({
+      title: 'Login',
+    });
   }
 
   render() {
