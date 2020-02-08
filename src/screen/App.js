@@ -6,6 +6,7 @@ import Register from './Register';
 import VerifyPhone from './verifyPhone';
 import EnterPassword from './EnterPassword';
 import ForgotPassword from './ForgotPassword';
+import Test_Loader from './Test_Loader';
 
 const Stack = createStackNavigator();
 

@@ -1,14 +1,8 @@
 import React, { Component } from 'react'
-import { View, ImageBackground } from 'react-native';
-import Header from "../component/SliderAN";
 import LoginComponent from "../component/login";
-import bgHeader from "./images/bgHeader.jpg";
-import bgApp from "./images/bgApp.png";
-import StylesApp from "../component/StylesApp";
-import styleLayout from './styleLayout';
+import Layout from './Layout';
 
 export default class Login extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -17,17 +11,10 @@ export default class Login extends Component {
   }
 
   render() {
-    const { ImageBgApp, styleHeader, styleBody } = styleLayout;
-
     return (
-      <ImageBackground source={bgApp} style={ImageBgApp}>
-        <View style={styleHeader}>
-          <Header bgHeader={bgHeader} title={StylesApp.logoText} quote={StylesApp.quote} />
-        </View>
-        <View style={styleBody}>
-          < LoginComponent navigation={this.props.navigation} />
-        </View>
-      </ImageBackground>
+      <>
+        <Layout><LoginComponent navigation={this.props.navigation} /></Layout>
+      </>
     )
   }
 }
