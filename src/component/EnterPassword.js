@@ -83,8 +83,13 @@ export default class EnterPassword extends Component {
             //Code
 
             //Redirect to login screen
-            this.props.navigation.navigate('Login');
+            this.redirectScreen('Login');
         }
+    }
+
+    //--------------------------------Redirect this screen to other screen with param which is object-----------------------------------------
+    redirectScreen = (screenName, param = {}) => {
+        this.props.navigation.navigate(screenName, param);
     }
 
     render() {

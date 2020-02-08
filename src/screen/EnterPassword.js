@@ -13,7 +13,7 @@ export default class EnterPassword extends Component {
   render() {
     return (
       <>
-        <Layout><EnterPasswordComponent navigation={this.props.navigation} /></Layout>
+        <Layout><EnterPasswordComponent navigation={this.props.navigation} route={this.props.route} /></Layout>
       </>
     )
   }

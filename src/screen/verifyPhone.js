@@ -13,7 +13,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <>
-        <Layout><VerifyPhoneComponent navigation={this.props.navigation} /></Layout>
+        <Layout><VerifyPhoneComponent navigation={this.props.navigation} route={this.props.route} /></Layout>
       </>
     )
   }

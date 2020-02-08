@@ -60,9 +60,9 @@ export default class Register extends Component {
         })
     }
 
-    //--------------------------------Redirect this screen to other screen-----------------------------------------
-    redirectScreen = (screenName) => {
-        this.props.navigation.navigate(screenName);
+    //--------------------------------Redirect this screen to other screen with param which is object-----------------------------------------
+    redirectScreen = (screenName, param = {}) => {
+        this.props.navigation.navigate(screenName, param);
     }
 
     //---------------------------------Get phone is filled in input and check---------------------------------------
@@ -72,7 +72,7 @@ export default class Register extends Component {
             //code
 
             //redirect to VerifyPhone Screen
-            this.redirectScreen('VerifyPhone');
+            this.redirectScreen('VerifyPhone', { 'phone': this.state.phone });
         }
     }
 

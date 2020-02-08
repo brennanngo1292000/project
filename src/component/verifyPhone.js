@@ -62,9 +62,9 @@ export default class ConfirmPhone extends Component {
         }
     }
 
-    //----------------------------------Redirect this screen to other screen-------------------------------------------
-    redirectScreen = (screenName) => {
-        this.props.navigation.navigate(screenName);
+    //--------------------------------Redirect this screen to other screen with param which is object-----------------------------------------
+    redirectScreen = (screenName, param = {}) => {
+        this.props.navigation.navigate(screenName, param);
     }
 
     //--------------------------------Send code again if user pressed again button------------------------------------
@@ -110,12 +110,11 @@ export default class ConfirmPhone extends Component {
                 <Text style={{ textAlign: 'center', color: 'red', justifyContent: 'center' }}>{this.state.error}</Text>
             </View>
         );
-
         return (
             <View style={ConfirmPhoneView}>
                 <View style={{ marginBottom: 10 }}>
                     <Text style={{ textAlign: 'center', color: StylesApp.text, fontSize: StylesApp.fontSize }}>Code has been sent to phone number</Text>
-                    <Text style={{ textAlign: 'center', color: StylesApp.text, fontSize: StylesApp.fontSize }}>(+84) 0123456789 {this.state.isSendCodeAgain ? ' (' + this.state.time + ') ' : null}</Text>
+                    <Text style={{ textAlign: 'center', color: StylesApp.text, fontSize: StylesApp.fontSize }}> {this.props.route.params.phone} {this.state.isSendCodeAgain ? ' (' + this.state.time + ') ' : null}</Text>
                 </View>
                 <View>
                     <View style={{ width: 350, height: 50, borderRadius: 10, overflow: 'hidden', backgroundColor: 'white', flexDirection: 'row', alignItems: 'center' }}>

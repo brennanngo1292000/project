@@ -13,7 +13,7 @@ export default class Register extends Component {
   render() {
     return (
       <>
-        <Layout><RegisterComponent navigation={this.props.navigation} /></Layout>
+        <Layout><RegisterComponent navigation={this.props.navigation} route={this.props.route} /></Layout>
       </>
     )
   }

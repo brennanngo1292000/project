@@ -12,7 +12,7 @@ export default class ForgotPassword extends Component {
   render() {
     return (
       <>
-        <Layout><ForgotPasswordComponent navigation={this.props.navigation} /></Layout>
+        <Layout><ForgotPasswordComponent navigation={this.props.navigation} route={this.props.route} /></Layout>
       </>
     )
   }

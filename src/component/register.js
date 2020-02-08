@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import StylesApp from './StylesApp';
 import Icon from "react-native-vector-icons/FontAwesome5";
 import InputAN from './InputAN';
@@ -68,19 +68,23 @@ export default class Register extends Component {
         })
     }
 
-    //--------------------------------Redirect this screen to other screen-----------------------------------------
-    redirectScreen = (screenName) => {
-        this.props.navigation.navigate(screenName);
+    //--------------------------------Redirect this screen to other screen with param which is object-----------------------------------------
+    redirectScreen = (screenName, param = {}) => {
+        this.props.navigation.navigate(screenName, param);
     }
 
     //---------------------------------Get phone is filled in input and check---------------------------------------
     postPhone() {
+        if (!this.state.isCheck) {
+            Alert.alert('You have to accepted before signup');
+        }
+
         if (this.checkPhone(this.state.phone) && this.state.isCheck) {
             // post data on server
             //code
 
             //redirect to VerifyPhone Screen
-            this.redirectScreen('VerifyPhone');
+            this.redirectScreen('VerifyPhone', { 'phone': this.state.phone });
         }
     }
 

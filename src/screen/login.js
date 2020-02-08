@@ -13,7 +13,7 @@ export default class Login extends Component {
   render() {
     return (
       <>
-        <Layout><LoginComponent navigation={this.props.navigation} /></Layout>
+        <Layout><LoginComponent navigation={this.props.navigation} route={this.props.route} /></Layout>
       </>
     )
   }

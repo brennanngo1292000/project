@@ -14,9 +14,9 @@ export default class login extends Component {
         this.redirectScreen = this.redirectScreen.bind(this);
     }
 
-    //------------------------------------Redirect this screen to other screen--------------------------------------- 
-    redirectScreen = (screenName) => {
-        this.props.navigation.navigate(screenName);
+    //--------------------------------Redirect this screen to other screen with param which is object-----------------------------------------
+    redirectScreen = (screenName, param = {}) => {
+        this.props.navigation.navigate(screenName, param);
     }
 
     render() {
