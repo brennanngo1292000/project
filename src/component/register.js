@@ -85,6 +85,7 @@ export default class Register extends Component {
     }
 
     render() {
+        const { registerView, buttonSelect, buttonForm, SignupAndFgPass } = styles;
 
         //-----------------------------------------Component to show error-------------------------------------------
         const errorComponent = (
@@ -94,9 +95,9 @@ export default class Register extends Component {
         );
 
         return (
-            <View style={styles.loginView}>
+            <View style={registerView}>
                 <View>
-                    <View style={styles.buttonSelect}>
+                    <View style={buttonSelect}>
                         <Text style={{ color: StylesApp.text, fontSize: StylesApp.fontSize, }}>Country</Text>
                         <TouchableOpacity style={{ flexDirection: "row", alignItems: 'center', justifyContent: 'space-between' }} onPress={() => {
                             this.setState({
@@ -117,7 +118,7 @@ export default class Register extends Component {
                     {this.state.isError ? errorComponent : null}
                     {/* Show error */}
 
-                    <View style={styles.buttonForm}>
+                    <View style={buttonForm}>
                         <ButtonTextAN onPress={this.postPhone} title={'Next'} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
                     </View>
                     <View style={{ marginTop: 10, flexDirection: 'row', justifyContent: 'center', alignItem: 'center' }}>
@@ -127,7 +128,7 @@ export default class Register extends Component {
                             <Text style={{ color: StylesApp.button, textDecorationLine: 'underline', fontSize: StylesApp.fontSize }}>Chinh sach, dieu khoan</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.SignupAndFgPass}>
+                    <View style={SignupAndFgPass}>
                         <ButtonTextAN onPress={() => this.redirectScreen('Login')} title={'Login'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                         <ButtonTextAN onPress={() => this.redirectScreen('VerifyPhone')} title={'Forgot password'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                     </View>
@@ -138,7 +139,7 @@ export default class Register extends Component {
 }
 
 const styles = StyleSheet.create({
-    loginView: {
+    registerView: {
         justifyContent: "flex-start",
         alignItems: 'center',
         flexDirection: 'column',

@@ -20,10 +20,12 @@ export default class login extends Component {
     }
 
     render() {
+        const { loginView, buttonSelect, buttonForm, inputPassword, SignupAndFgPass } = styles;
+
         return (
-            <View style={styles.loginView}>
+            <View style={loginView}>
                 <View>
-                    <View style={styles.buttonSelect}>
+                    <View style={buttonSelect}>
                         <Text style={{ color: StylesApp.text, fontSize: StylesApp.fontSize, }}>Country</Text>
                         <TouchableOpacity style={{ flexDirection: "row", alignItems: 'center', justifyContent: 'space-between' }} onPress={() => {
                             this.setState({
@@ -39,13 +41,13 @@ export default class login extends Component {
                     <View>
                         <InputAN placeholder='Phone' fontSize={StylesApp.fontSize} bgColor={'white'} />
                     </View>
-                    <View style={styles.inputPassword}>
+                    <View style={inputPassword}>
                         <InputAN placeholder='Password' hasIcon={true} fontSize={StylesApp.fontSize} bgColor={'white'} />
                     </View>
-                    <View style={styles.buttonForm}>
+                    <View style={buttonForm}>
                         <ButtonTextAN title={'Sign in'} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
                     </View>
-                    <View style={styles.SignupAndFgPass}>
+                    <View style={SignupAndFgPass}>
                         <ButtonTextAN onPress={() => this.redirectScreen('Register')} title={'Signup'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                         <ButtonTextAN onPress={() => this.redirectScreen('ForgotPassword')} title={'Forgot password'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                     </View>

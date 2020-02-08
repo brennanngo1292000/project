@@ -102,6 +102,9 @@ export default class ConfirmPhone extends Component {
     }
 
     render() {
+        const { ConfirmPhoneView, buttonForm, SignupAndFgPass } = styles;
+
+        //-----------------------------------------Component to show error-------------------------------------------
         const errorComponent = (
             <View style={{ justifyContent: 'center' }}>
                 <Text style={{ textAlign: 'center', color: 'red', justifyContent: 'center' }}>{this.state.error}</Text>
@@ -109,7 +112,7 @@ export default class ConfirmPhone extends Component {
         );
 
         return (
-            <View style={styles.ConfirmPhoneView}>
+            <View style={ConfirmPhoneView}>
                 <View style={{ marginBottom: 10 }}>
                     <Text style={{ textAlign: 'center', color: StylesApp.text, fontSize: StylesApp.fontSize }}>Code has been sent to phone number</Text>
                     <Text style={{ textAlign: 'center', color: StylesApp.text, fontSize: StylesApp.fontSize }}>(+84) 0123456789 {this.state.isSendCodeAgain ? ' (' + this.state.time + ') ' : null}</Text>
@@ -124,10 +127,10 @@ export default class ConfirmPhone extends Component {
                     {this.state.isError ? errorComponent : null}
                     {/* Show error */}
 
-                    <View style={styles.buttonForm}>
+                    <View style={buttonForm}>
                         <ButtonTextAN title={'Next'} onPress={this.confirmCode} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
                     </View>
-                    <View style={styles.SignupAndFgPass}>
+                    <View style={SignupAndFgPass}>
                         <ButtonTextAN onPress={() => this.redirectScreen('Register')} title={'Signup'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                         <ButtonTextAN onPress={() => this.redirectScreen('Login')} title={'Login'} fontSize={StylesApp.fontSize} color={StylesApp.button} />
                     </View>
@@ -155,10 +158,5 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center"
-    },
-    textButtonStyle: {
-        textAlign: 'center',
-        color: StylesApp.button,
-        fontSize: StylesApp.fontSize
     }
 })

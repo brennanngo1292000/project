@@ -88,6 +88,9 @@ export default class EnterPassword extends Component {
     }
 
     render() {
+        const { EnterPasswordView, buttonForm, inputPassword } = styles;
+
+        //-----------------------------------------Component to show error-------------------------------------------
         const errorComponent = (
             <View style={{ justifyContent: 'center' }}>
                 <Text style={{ textAlign: 'center', color: 'red', justifyContent: 'center' }}>{this.state.error}</Text>
@@ -95,9 +98,9 @@ export default class EnterPassword extends Component {
         );
 
         return (
-            <View style={styles.loginView}>
+            <View style={EnterPasswordView}>
                 <View style={{ flexDirection: "column", justifyContent: "center" }}>
-                    <View style={styles.inputPassword}>
+                    <View style={inputPassword}>
                         <InputAN onChangeInput={this.textChange} placeholder='Enter password' hasIcon={true} fontSize={StylesApp.fontSize} bgColor={'white'} />
                     </View>
 
@@ -105,7 +108,7 @@ export default class EnterPassword extends Component {
                     {this.state.isError ? errorComponent : null}
                     {/* Show error */}
 
-                    <View style={styles.buttonForm}>
+                    <View style={buttonForm}>
                         <ButtonTextAN title={'Login'} onPress={this.createPassword} fontSize={StylesApp.fontSize} color={'white'} bgColor={StylesApp.button} width={350} height={50} />
                     </View>
                 </View>
@@ -115,7 +118,7 @@ export default class EnterPassword extends Component {
 }
 
 const styles = StyleSheet.create({
-    loginView: {
+    EnterPasswordView: {
         justifyContent: "flex-start",
         alignItems: 'center',
         flexDirection: 'column',
@@ -133,11 +136,5 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 10,
         borderColor: StylesApp.text
-    },
-    SignupAndFgPass: {
-        marginTop: 10,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center"
     }
 })

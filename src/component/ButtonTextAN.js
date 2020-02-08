@@ -54,9 +54,11 @@ export default class ButtonTextAN extends Component {
     }
 
     render() {
+        const { bgButtonText, pressed, notPress } = this.styles;
+
         return (
-            <TouchableOpacity onPressOut={this.onPressOut} onPressIn={this.onPressIn} onPress={this.onPress} style={this.styles.bgButtonText}>
-                <Text style={this.state.isPress ? this.styles.pressed : this.styles.notPress}>
+            <TouchableOpacity onPressOut={this.onPressOut} onPressIn={this.onPressIn} onPress={this.onPress} style={bgButtonText}>
+                <Text style={this.state.isPress ? pressed : notPress}>
                     {this.props.title ? this.props.title : 'Button'}
                 </Text>
             </TouchableOpacity>
